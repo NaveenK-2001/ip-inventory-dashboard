@@ -1,23 +1,12 @@
 CREATE DATABASE IF NOT EXISTS ip_inventory CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE ip_inventory;
 
-CREATE TABLE IF NOT EXISTS vlans (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    vlan_id VARCHAR(20) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    location VARCHAR(50) NOT NULL,
-    zone VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY uniq_vlan_scope (vlan_id, location, zone)
-);
-
 CREATE TABLE IF NOT EXISTS ip_addresses (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     ip VARCHAR(45) NOT NULL,
     hostname VARCHAR(255) DEFAULT NULL,
     location VARCHAR(50) NOT NULL,
-    zone VARCHAR(50) NOT NULL DEFAULT '',
+    zone VARCHAR(50) DEFAULT NULL,
     vlan VARCHAR(20) NOT NULL,
     device VARCHAR(100) DEFAULT NULL,
     os VARCHAR(100) DEFAULT NULL,
@@ -27,6 +16,5 @@ CREATE TABLE IF NOT EXISTS ip_addresses (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     UNIQUE KEY uniq_ip_scope (ip, location, zone, vlan),
     KEY idx_status (status),
-    KEY idx_location (location),
-    KEY idx_vlan_scope (vlan, location, zone)
+    KEY idx_location (location)
 );
