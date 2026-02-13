@@ -15,19 +15,19 @@
 <aside class="sidebar">
   <ul>
     <li class="active">Dashboard</li>
-    <li><a href="inventory.html">IP Inventory</a></li>
-    <li><a href="reports.html">Reports</a></li>
-    <li><a href="manage.html">Manage IPs</a></li>
+    <li><a href="inventory.php">IP Inventory</a></li>
+    <li><a href="reports.php">Reports</a></li>
+    <li><a href="manage.php">Manage IPs</a></li>
   </ul>
 </aside>
 
 <main class="content">
   <section class="summary">
-    <a href="status.html?type=total" class="card blue">Total <span id="totalIPs">0</span></a>
-    <a href="status.html?type=used" class="card green">Used <span id="usedIPs">0</span></a>
-    <a href="status.html?type=free" class="card orange">Free <span id="freeIPs">0</span></a>
-    <a href="status.html?type=reserved" class="card yellow">Reserved <span id="reservedIPs">0</span></a>
-    <a href="status.html?type=static" class="card red">Static <span id="staticIPs">0</span></a>
+    <a href="status.php?type=total" class="card blue">Total <span id="totalIPs">0</span></a>
+    <a href="status.php?type=used" class="card green">Used <span id="usedIPs">0</span></a>
+    <a href="status.php?type=free" class="card orange">Free <span id="freeIPs">0</span></a>
+    <a href="status.php?type=reserved" class="card yellow">Reserved <span id="reservedIPs">0</span></a>
+    <a href="status.php?type=static" class="card red">Static <span id="staticIPs">0</span></a>
   </section>
 
   <section class="grid-2">
